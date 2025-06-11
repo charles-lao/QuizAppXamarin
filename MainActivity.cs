@@ -34,6 +34,7 @@ namespace QuizAppXamarin
             toolbar = (AndroidX.AppCompat.Widget.Toolbar)FindViewById(Resource.Id.toolbar);
             drawerLayout = (AndroidX.DrawerLayout.Widget.DrawerLayout)FindViewById(Resource.Id.drawerLayout);
             navigationView = (NavigationView)FindViewById(Resource.Id.navview);
+            navigationView.NavigationItemSelected += NavigationView_NavigationItemSelected;
 
             // Setup toolbar
             SetSupportActionBar(toolbar);
@@ -61,45 +62,109 @@ namespace QuizAppXamarin
             businessLayout.Click += BusinessLayout_Click;
         }
 
+        private void NavigationView_NavigationItemSelected(object sender, NavigationView.NavigationItemSelectedEventArgs e)
+        {
+            if (e.MenuItem.ItemId == Resource.Id.navHistory)
+            {
+                InitHistory();
+                drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navGeography)
+            {
+                InitGeography();
+                drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navSpace)
+            {
+                InitSpace();
+                drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navProgramming)
+            {
+                InitProgramming();
+                drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navEngineering)
+            {
+                InitEngineering();
+                drawerLayout.CloseDrawers();
+            }
+            else if (e.MenuItem.ItemId == Resource.Id.navBusiness)
+            {
+                InitBusiness();
+                drawerLayout.CloseDrawers();
+            }
+        }
+
         private void BusinessLayout_Click(object sender, System.EventArgs e)
+        {
+            InitBusiness();
+        }
+
+        private void ProgrammingLayout_Click(object sender, System.EventArgs e)
+        {
+            InitProgramming();
+        }
+
+        private void EngineeringLayout_Click(object sender, System.EventArgs e)
+        {
+            InitEngineering();
+        }
+
+        private void GeographyLayout_Click(object sender, System.EventArgs e)
+        {
+            InitGeography();
+        }
+
+        private void SpaceLayout_Click(object sender, System.EventArgs e)
+        {
+            InitSpace();
+        }
+
+        private void HistoryLayout_Click(object sender, System.EventArgs e)
+        {
+            InitHistory();
+        }
+
+        void InitHistory()
+        {
+            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "History");
+            StartActivity(intent);
+        }
+
+        void InitBusiness()
         {
             Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
             intent.PutExtra("topic", "Business");
             StartActivity(intent);
         }
 
-        private void ProgrammingLayout_Click(object sender, System.EventArgs e)
+        void InitProgramming()
         {
             Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
             intent.PutExtra("topic", "Programming");
             StartActivity(intent);
         }
 
-        private void EngineeringLayout_Click(object sender, System.EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Engineering");
-            StartActivity(intent);
-        }
-
-        private void GeographyLayout_Click(object sender, System.EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "Geography");
-            StartActivity(intent);
-        }
-
-        private void SpaceLayout_Click(object sender, System.EventArgs e)
+        void InitSpace()
         {
             Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
             intent.PutExtra("topic", "Space");
             StartActivity(intent);
         }
 
-        private void HistoryLayout_Click(object sender, System.EventArgs e)
+        void InitGeography()
         {
             Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
-            intent.PutExtra("topic", "History");
+            intent.PutExtra("topic", "Geography");
+            StartActivity(intent);
+        }
+
+        void InitEngineering()
+        {
+            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Engineering");
             StartActivity(intent);
         }
 
