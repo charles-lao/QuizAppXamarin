@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+			  android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	
+	<ImageView
+		android:id="@+id/quizImage"
+		android:layout_width="130dp"
+		android:layout_height="130dp"
+		android:src="@drawable/history"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="20dp"/>
+	
+	<TextView
+		android:id="@+id/quizTopicText"
+		android:text="Topic"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"/>
+	
+	<TextView
+		android:id="@+id/quizDescriptionText"
+		android:textSize="15sp"
+		android:layout_margin="20dp"
+		android:gravity="center"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac sollicitudin metus. Morbi imperdiet ultrices erat, eu consequat nisl rhoncus non. Nam ut enim erat. Duis tincidunt eros vitae quam pretium ultrices. Fusce ultricies odio est, at faucibus sem vestibulum eget. Sed pulvinar mollis purus scelerisque commodo. Proin et sem tempor, consectetur ex vel, hendrerit dui."/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		
+		<Button
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="50dp"
+			android:id="@+id/startQuizButton"
+			android:text="Start Quiz"
+			android:textStyle="bold"
+			android:layout_width="200dp"
+			android:textColor="@android:color/white"
+			android:layout_height="40dp"
+			android:background="@drawable/roundButton"/>
+		
+	</RelativeLayout>
+</LinearLayout>
