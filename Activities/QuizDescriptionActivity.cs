@@ -37,6 +37,39 @@ namespace QuizAppXamarin.Activities
 
             quizTopic = Intent.GetStringExtra("topic");
             quizTopicTextView.Text = quizTopic;
+            quizImageView.SetImageResource(GetImage(quizTopic));
+        }
+
+        int GetImage(string topic)
+        {
+            int imageInt = 0;
+
+            if (topic == "History")
+            {
+                imageInt = Resource.Drawable.history;
+            }
+            else if (topic == "Geography")
+            {
+                imageInt = Resource.Drawable.geography;
+            }
+            else if (topic == "Space")
+            {
+                imageInt = Resource.Drawable.space;
+            }
+            else if (topic == "Programming")
+            {
+                imageInt = Resource.Drawable.programming;
+            }
+            else if (topic == "Engineering")
+            {
+                imageInt = Resource.Drawable.engineering;
+            }
+            else if (topic == "Business")
+            {
+                imageInt = Resource.Drawable.business;
+            }
+
+            return imageInt;
         }
     }
 }
