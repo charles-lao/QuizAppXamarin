@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using QuizAppXamarin.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,10 @@ namespace QuizAppXamarin.Activities
             quizTopic = Intent.GetStringExtra("topic");
             quizTopicTextView.Text = quizTopic;
             quizImageView.SetImageResource(GetImage(quizTopic));
+
+            // Retrieve topic description
+            QuizHelper quizHelper = new QuizHelper();
+            descriptionTextView.Text = quizHelper.GetTopicDescription(quizTopic);
         }
 
         int GetImage(string topic)

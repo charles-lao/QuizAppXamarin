@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Activities\QuizDescriptionActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="Helpers\QuizHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
