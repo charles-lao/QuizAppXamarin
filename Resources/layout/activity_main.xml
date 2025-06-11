@@ -1,275 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-	android:orientation="vertical"
-	android:background="#dbdbdb"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+	android:id="@+id/drawerLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:fitsSystemWindows="true">
 	
-	 <androidx.appcompat.widget.Toolbar
+	 <LinearLayout
+		 android:orientation="vertical"
 		 android:layout_width="match_parent"
-		 android:background="@color/colorPrimary"
-		 android:elevation="4dp"
-		 android:theme="@style/AppTheme.DarkAppBar"
-		 android:id="@+id/toolbar"
-		 android:layout_height="?android:attr/actionBarSize"/>
+		 android:layout_height="match_parent">
+		 
+		 <include
+			layout="@layout/include_main"
+			 />
+		 
+	</LinearLayout>
+
+	<com.google.android.material.navigation.NavigationView
+		android:id="@+id/navview"
+		android:layout_height="match_parent"
+		android:layout_width="300dp"
+		android:background="@color/white"
+		android:layout_gravity="start"
+		app:headerLayout="@layout/navheader"
+		app:menu="@menu/navmenu"
+	/>
 	
-	<TextView
-		android:layout_marginTop="20dp"
-		android:gravity="center"
-		android:textSize="20sp"
-		android:text="Select a Topic for Quiz"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"/>
-
-	<ScrollView
-		android:scrollbars="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent">
-		
-		<GridLayout
-			android:layout_gravity="center"
-			android:padding="16dp"
-			android:rowCount="3"
-			android:columnCount="2"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			>
-
-			<!-- Row One -->
-			
-			<androidx.cardview.widget.CardView
-				android:layout_marginRight="30dp"
-				android:layout_gravity="right"
-				android:layout_width="147dp"
-				android:layout_height="141dp"
-				app:cardCornerRadius="4dp"
-				app:cardElevation="2dp"
-				android:layout_marginBottom="10dp">
-
-				<LinearLayout
-					android:id="@+id/historyLayout"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:orientation="vertical">
-					
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_gravity="center_horizontal"
-						android:src="@drawable/history"
-						android:layout_width="100dp"
-						android:layout_height="100dp"/>
-					
-					<View
-						android:background="@color/colorAsh"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"/>
-					
-					<TextView
-						style="@style/topic_textView"
-						android:text="History"
-						/>
-					
-				</LinearLayout>>
-					
-				
-			</androidx.cardview.widget.CardView>
-			
-			<androidx.cardview.widget.CardView
-				android:layout_gravity="left"
-				android:layout_width="147dp"
-				android:layout_height="141dp"
-				app:cardCornerRadius="4dp"
-				app:cardElevation="2dp"
-				android:layout_marginBottom="10dp">
-
-				<LinearLayout
-					android:id="@+id/geographyLayout"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:orientation="vertical">
-
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_gravity="center_horizontal"
-						android:src="@drawable/geography"
-						android:layout_width="100dp"
-						android:layout_height="100dp"/>
-
-					<View
-						android:background="@color/colorAsh"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"/>
-
-					<TextView
-						style="@style/topic_textView"
-						android:text="Geography"
-						/>
-
-				</LinearLayout>>
-
-
-			</androidx.cardview.widget.CardView>
-
-			
-			<!-- Row Two -->
-
-			<androidx.cardview.widget.CardView
-				android:layout_marginRight="30dp"
-				android:layout_gravity="right"
-				android:layout_width="147dp"
-				android:layout_height="141dp"
-				app:cardCornerRadius="4dp"
-				app:cardElevation="2dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginBottom="10dp">
-
-				<LinearLayout
-					android:id="@+id/spaceLayout"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:orientation="vertical">
-
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_gravity="center_horizontal"
-						android:src="@drawable/space"
-						android:layout_width="100dp"
-						android:layout_height="100dp"/>
-
-					<View
-						android:background="@color/colorAsh"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"/>
-
-					<TextView
-						style="@style/topic_textView"
-						android:text="Space"
-						/>
-
-				</LinearLayout>>
-
-
-			</androidx.cardview.widget.CardView>
-
-			<androidx.cardview.widget.CardView
-				android:layout_marginTop="10dp"
-				android:layout_gravity="left"
-				android:layout_width="147dp"
-				android:layout_height="141dp"
-				app:cardCornerRadius="4dp"
-				app:cardElevation="2dp"
-				android:layout_marginBottom="10dp">
-
-				<LinearLayout
-					android:id="@+id/engineeringLayout"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:orientation="vertical">
-
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_gravity="center_horizontal"
-						android:src="@drawable/engineering"
-						android:layout_width="100dp"
-						android:layout_height="100dp"/>
-
-					<View
-						android:background="@color/colorAsh"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"/>
-
-					<TextView
-						style="@style/topic_textView"
-						android:text="Engineering"
-						/>
-
-				</LinearLayout>>
-
-
-			</androidx.cardview.widget.CardView>
-
-			
-			<!-- Row Three -->
-
-			<androidx.cardview.widget.CardView
-				android:layout_marginRight="30dp"
-				android:layout_gravity="right"
-				android:layout_width="147dp"
-				android:layout_height="141dp"
-				app:cardCornerRadius="4dp"
-				app:cardElevation="2dp"
-				android:layout_marginTop="10dp"
-				android:layout_marginBottom="10dp">
-
-				<LinearLayout
-					android:id="@+id/programmingLayout"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:orientation="vertical">
-
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_gravity="center_horizontal"
-						android:src="@drawable/programming"
-						android:layout_width="100dp"
-						android:layout_height="100dp"/>
-
-					<View
-						android:background="@color/colorAsh"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"/>
-
-					<TextView
-						style="@style/topic_textView"
-						android:text="Programming"
-						/>
-
-				</LinearLayout>>
-
-
-			</androidx.cardview.widget.CardView>
-
-			<androidx.cardview.widget.CardView
-				android:layout_marginTop="10dp"
-				android:layout_gravity="left"
-				android:layout_width="147dp"
-				android:layout_height="141dp"
-				app:cardCornerRadius="4dp"
-				app:cardElevation="2dp"
-				android:layout_marginBottom="10dp">
-
-				<LinearLayout
-					android:id="@+id/businessLayout"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:orientation="vertical">
-
-					<ImageView
-						android:layout_marginTop="10dp"
-						android:layout_gravity="center_horizontal"
-						android:src="@drawable/business"
-						android:layout_width="100dp"
-						android:layout_height="100dp"/>
-
-					<View
-						android:background="@color/colorAsh"
-						android:layout_width="match_parent"
-						android:layout_height="1dp"/>
-
-					<TextView
-						style="@style/topic_textView"
-						android:text="Business"
-						/>
-
-				</LinearLayout>>
-
-
-			</androidx.cardview.widget.CardView>
-
-		</GridLayout>
-		
-	</ScrollView>
-	
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
