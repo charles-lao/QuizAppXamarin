@@ -2,8 +2,10 @@
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using Google.Android.Material.Navigation;
 using QuizAppXamarin.Activities;
 
 namespace QuizAppXamarin
@@ -12,6 +14,8 @@ namespace QuizAppXamarin
     public class MainActivity : AppCompatActivity
     {
         AndroidX.AppCompat.Widget.Toolbar toolbar;
+        AndroidX.DrawerLayout.Widget.DrawerLayout drawerLayout;
+        NavigationView navigationView;
 
         LinearLayout historyLayout;
         LinearLayout spaceLayout;
@@ -28,6 +32,8 @@ namespace QuizAppXamarin
             SetContentView(Resource.Layout.activity_main);
 
             toolbar = (AndroidX.AppCompat.Widget.Toolbar)FindViewById(Resource.Id.toolbar);
+            drawerLayout = (AndroidX.DrawerLayout.Widget.DrawerLayout)FindViewById(Resource.Id.drawerLayout);
+            navigationView = (NavigationView)FindViewById(Resource.Id.navview);
 
             // Setup toolbar
             SetSupportActionBar(toolbar);
@@ -95,6 +101,21 @@ namespace QuizAppXamarin
             Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
             intent.PutExtra("topic", "History");
             StartActivity(intent);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    drawerLayout.OpenDrawer((int)GravityFlags.Left);
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+
+            
         }
     }
 }
