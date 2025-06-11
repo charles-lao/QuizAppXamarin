@@ -129,6 +129,19 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\menuaction.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\outline_history.xml" />
+    <AndroidResource Include="Resources\drawable\outline_geography.xml" />
+    <AndroidResource Include="Resources\drawable\outline_business.xml" />
+    <AndroidResource Include="Resources\drawable\outline_engineering.xml" />
+    <AndroidResource Include="Resources\drawable\outline_programming.xml" />
+    <AndroidResource Include="Resources\drawable\outline_space.xml" />
+    <AndroidResource Include="Resources\layout\navheader.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\quizappimage.png" />
+    <Content Include="Resources\menu\navmenu.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

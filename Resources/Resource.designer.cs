@@ -3395,25 +3395,46 @@ namespace QuizAppXamarin
 			public const int notify_panel_notification_icon_bg = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int programming = 2131165315;
+			public const int outline_business = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int quizcover = 2131165316;
+			public const int outline_engineering = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int roundbutton = 2131165317;
+			public const int outline_geography = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int space = 2131165318;
+			public const int outline_history = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int splash = 2131165319;
+			public const int outline_programming = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int tooltip_frame_dark = 2131165320;
+			public const int outline_space = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int tooltip_frame_light = 2131165321;
+			public const int programming = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int quizappimage = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int quizcover = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int roundbutton = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int space = 2131165325;
+			
+			// aapt resource value: 0x7F07008E
+			public const int splash = 2131165326;
+			
+			// aapt resource value: 0x7F07008F
+			public const int tooltip_frame_dark = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int tooltip_frame_light = 2131165328;
 			
 			static Drawable()
 			{
@@ -4431,37 +4452,40 @@ namespace QuizAppXamarin
 			public const int mtrl_layout_snackbar_include = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int notification_action = 2131427376;
+			public const int navheader = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int notification_action_tombstone = 2131427377;
+			public const int notification_action = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int notification_template_custom_big = 2131427378;
+			public const int notification_action_tombstone = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int notification_template_icon_group = 2131427379;
+			public const int notification_template_custom_big = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int notification_template_part_chronometer = 2131427380;
+			public const int notification_template_icon_group = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int notification_template_part_time = 2131427381;
-			
-			// aapt resource value: 0x7F0B0039
-			public const int selected_topic = 2131427385;
+			public const int notification_template_part_chronometer = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int select_dialog_item_material = 2131427382;
-			
-			// aapt resource value: 0x7F0B0037
-			public const int select_dialog_multichoice_material = 2131427383;
-			
-			// aapt resource value: 0x7F0B0038
-			public const int select_dialog_singlechoice_material = 2131427384;
+			public const int notification_template_part_time = 2131427382;
 			
 			// aapt resource value: 0x7F0B003A
-			public const int support_simple_spinner_dropdown_item = 2131427386;
+			public const int selected_topic = 2131427386;
+			
+			// aapt resource value: 0x7F0B0037
+			public const int select_dialog_item_material = 2131427383;
+			
+			// aapt resource value: 0x7F0B0038
+			public const int select_dialog_multichoice_material = 2131427384;
+			
+			// aapt resource value: 0x7F0B0039
+			public const int select_dialog_singlechoice_material = 2131427385;
+			
+			// aapt resource value: 0x7F0B003B
+			public const int support_simple_spinner_dropdown_item = 2131427387;
 			
 			static Layout()
 			{
