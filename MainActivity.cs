@@ -50,6 +50,30 @@ namespace QuizAppXamarin
             historyLayout.Click += HistoryLayout_Click;
             spaceLayout.Click += SpaceLayout_Click;
             geographyLayout.Click += GeographyLayout_Click;
+            engineeringLayout.Click += EngineeringLayout_Click;
+            programmingLayout.Click += ProgrammingLayout_Click;
+            businessLayout.Click += BusinessLayout_Click;
+        }
+
+        private void BusinessLayout_Click(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Business");
+            StartActivity(intent);
+        }
+
+        private void ProgrammingLayout_Click(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Programming");
+            StartActivity(intent);
+        }
+
+        private void EngineeringLayout_Click(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(QuizDescriptionActivity));
+            intent.PutExtra("topic", "Engineering");
+            StartActivity(intent);
         }
 
         private void GeographyLayout_Click(object sender, System.EventArgs e)
