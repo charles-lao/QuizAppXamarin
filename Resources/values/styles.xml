@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+	<style name="AppTheme.DarkAppBar" parent="ThemeOverlay.AppCompat.Dark"/>
+	
 	<style name="topic_textView" parent="AppTheme">
 		<item name="android:layout_gravity">center_vertical</item>
 		<item name="android:gravity">center</item>
