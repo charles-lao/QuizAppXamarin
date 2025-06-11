@@ -49,6 +49,7 @@
 				android:layout_marginBottom="10dp">
 
 				<LinearLayout
+					android:id="@+id/historyLayout"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:orientation="vertical">
@@ -84,6 +85,7 @@
 				android:layout_marginBottom="10dp">
 
 				<LinearLayout
+					android:id="@+id/geographyLayout"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:orientation="vertical">
@@ -124,6 +126,7 @@
 				android:layout_marginBottom="10dp">
 
 				<LinearLayout
+					android:id="@+id/spaceLayout"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:orientation="vertical">
@@ -160,6 +163,7 @@
 				android:layout_marginBottom="10dp">
 
 				<LinearLayout
+					android:id="@+id/engineeringLayout"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:orientation="vertical">
@@ -200,6 +204,7 @@
 				android:layout_marginBottom="10dp">
 
 				<LinearLayout
+					android:id="@+id/programmingLayout"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:orientation="vertical">
@@ -236,6 +241,7 @@
 				android:layout_marginBottom="10dp">
 
 				<LinearLayout
+					android:id="@+id/businessLayout"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:orientation="vertical">
