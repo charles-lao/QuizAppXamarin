@@ -5,6 +5,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using QuizAppXamarin.DataModels;
+using QuizAppXamarin.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +29,12 @@ namespace QuizAppXamarin.Activities
         // Button
         Button proceedQuizButton;
 
+        // Variables
+        List<Question> quizQuestionList = new List<Question>();
+        QuizHelper quizHelper = new QuizHelper();
+
         string quizTopic;
+        int quizPosition;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,6 +53,7 @@ namespace QuizAppXamarin.Activities
             actionBar.SetDisplayHomeAsUpEnabled(true);
 
             ConnectViews();
+            BeginQuiz();
         }
 
         void ConnectViews()
@@ -67,6 +75,21 @@ namespace QuizAppXamarin.Activities
 
             // Button
             proceedQuizButton = (Button)FindViewById(Resource.Id.proceedQuizButton);
+
+
+        }
+
+        void BeginQuiz()
+        {
+            quizPosition = 1;
+            quizQuestionList = quizHelper.GetQuizQuestions(quizTopic);
+            questionTextView.Text = quizQuestionList[0].QuizQuestion;
+            optionATextView.Text = quizQuestionList[0].OptionA;
+            optionBTextView.Text = quizQuestionList[0].OptionB;
+            optionCTextView.Text = quizQuestionList[0].OptionC;
+            optionDTextView.Text = quizQuestionList[0].OptionD;
+
+            quizPositionTextView.Text = "Question " + quizPosition.ToString() + "/" + quizQuestionList.Count();
         }
     }
 }
