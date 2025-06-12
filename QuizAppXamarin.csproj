@@ -63,6 +63,7 @@
     <Compile Include="Activities\QuizActivity.cs" />
     <Compile Include="Activities\QuizDescriptionActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="DataModels\Question.cs" />
     <Compile Include="Helpers\QuizHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
