@@ -35,6 +35,7 @@ namespace QuizAppXamarin.Activities
             descriptionTextView = (TextView)FindViewById(Resource.Id.quizDescriptionText);
             quizImageView = (ImageView)FindViewById(Resource.Id.quizImage);
             startQuizButton = (Button)FindViewById(Resource.Id.startQuizButton);
+            
 
             quizTopic = Intent.GetStringExtra("topic");
             quizTopicTextView.Text = quizTopic;
@@ -43,6 +44,15 @@ namespace QuizAppXamarin.Activities
             // Retrieve topic description
             QuizHelper quizHelper = new QuizHelper();
             descriptionTextView.Text = quizHelper.GetTopicDescription(quizTopic);
+            startQuizButton.Click += StartQuizButton_Click;
+        }
+
+        private void StartQuizButton_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(QuizActivity));
+            intent.PutExtra("topic", quizTopic);
+            StartActivity(intent);
+            Finish();
         }
 
         int GetImage(string topic)
