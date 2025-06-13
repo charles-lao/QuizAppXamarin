@@ -64,6 +64,7 @@
     <Compile Include="Activities\QuizDescriptionActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="DataModels\Question.cs" />
+    <Compile Include="Fragments\CorrectFragment.cs" />
     <Compile Include="Helpers\QuizHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -155,6 +156,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\outline_arrowback.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\correct.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\correct.png" />
+    <AndroidResource Include="Resources\drawable\wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\roundbutton_green.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

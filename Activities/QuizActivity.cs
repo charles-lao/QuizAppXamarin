@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using QuizAppXamarin.DataModels;
+using QuizAppXamarin.Fragments;
 using QuizAppXamarin.Helpers;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,11 @@ namespace QuizAppXamarin.Activities
             optionCRadio = (RadioButton)FindViewById(Resource.Id.optionCRadio);
             optionDRadio = (RadioButton)FindViewById(Resource.Id.optionDRadio);
 
+            optionARadio.Click += OptionARadio_Click;
+            optionBRadio.Click += OptionBRadio_Click;
+            optionCRadio.Click += OptionCRadio_Click;
+            optionDRadio.Click += OptionDRadio_Click;
+
             // TextViews
             optionATextView = (TextView)FindViewById(Resource.Id.optionATextView);
             optionBTextView = (TextView)FindViewById(Resource.Id.optionBTextView);
@@ -75,8 +81,101 @@ namespace QuizAppXamarin.Activities
 
             // Button
             proceedQuizButton = (Button)FindViewById(Resource.Id.proceedQuizButton);
+            proceedQuizButton.Click += ProceedQuizButton_Click;
 
 
+        }
+
+        private void ProceedQuizButton_Click(object sender, EventArgs e)
+        {
+            if(!optionARadio.Checked && !optionBRadio.Checked && !optionCRadio.Checked && !optionDRadio.Checked)
+            {
+                Toast.MakeText(this, "Please choose an answer...", ToastLength.Short).Show();
+            }
+            // Checks option A for Correct Answer
+            else if (optionARadio.Checked)
+            {
+                if(optionATextView.Text == quizQuestionList[quizPosition-1].Answer)
+                {
+                    CorrectAnswer();
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                }
+            }
+            // Checks option B for Correct Answer
+            else if (optionBRadio.Checked)
+            {
+                if (optionBTextView.Text == quizQuestionList[quizPosition - 1].Answer)
+                {
+                    CorrectAnswer();
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                }
+            }
+            // Checks option C for Correct Answer
+            else if (optionCRadio.Checked)
+            {
+                if(optionCTextView.Text == quizQuestionList[quizPosition - 1].Answer)
+                {
+                    CorrectAnswer();
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                }
+            }
+            // Checks option D for Correct Answer
+            else if (optionDRadio.Checked)
+            {
+                if (optionDTextView.Text == quizQuestionList[quizPosition - 1].Answer)
+                {
+                    CorrectAnswer();
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                }
+            }
+        }
+
+
+
+        // Radio Button Click Event Handlers
+
+        private void OptionDRadio_Click(object sender, EventArgs e)
+        {
+            ClearOptionsSelected();
+            optionDRadio.Checked = true;
+        }
+
+        private void OptionCRadio_Click(object sender, EventArgs e)
+        {
+            ClearOptionsSelected();
+            optionCRadio.Checked = true;
+        }
+
+        private void OptionBRadio_Click(object sender, EventArgs e)
+        {
+            ClearOptionsSelected();
+            optionBRadio.Checked = true;
+        }
+
+        private void OptionARadio_Click(object sender, EventArgs e)
+        {
+            ClearOptionsSelected();
+            optionARadio.Checked = true;
+        }
+
+        void ClearOptionsSelected()
+        {
+            optionARadio.Checked = false;
+            optionBRadio.Checked = false;
+            optionCRadio.Checked = false;
+            optionDRadio.Checked = false;
         }
 
         void BeginQuiz()
@@ -91,5 +190,20 @@ namespace QuizAppXamarin.Activities
 
             quizPositionTextView.Text = "Question " + quizPosition.ToString() + "/" + quizQuestionList.Count();
         }
+
+        void CorrectAnswer()
+        {
+            CorrectFragment correctFragment = new CorrectFragment();
+            var trans = SupportFragmentManager.BeginTransaction();
+            correctFragment.Cancelable = false;
+            correctFragment.Show(trans, "Correct");
+            correctFragment.NextQuestion += CorrectFragment_NextQuestion;
+        }
+
+        private void CorrectFragment_NextQuestion(object sender, EventArgs e)
+        {
+            // Next Question
+        }
     }
+
 }

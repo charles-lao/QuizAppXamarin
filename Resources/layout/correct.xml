@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+	android:minWidth="200dp"
+	android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	
+	<ImageView
+		android:layout_gravity="center_horizontal"
+		android:src="@drawable/correct"
+		android:layout_width="100dp"
+		android:layout_height="100dp"/>
+	
+	<TextView
+		android:text="You nailed it !!!"
+		android:gravity="center"
+		android:textStyle="bold"
+		android:textSize="18sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"/>
+	
+	<Button
+		android:text="Proceed"
+		android:layout_width="200dp"
+		android:layout_height="36dp"
+		android:background="@drawable/roundbutton_green"
+		android:textAllCaps="false"
+		android:textColor="@color/white"
+		android:textStyle="bold"
+		android:layout_marginTop="25dp"
+		android:layout_marginBottom="10dp"
+		android:layout_gravity="center_horizontal"
+		android:id="@+id/correctButton"/>
+
+</LinearLayout>
