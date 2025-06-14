@@ -101,7 +101,7 @@ namespace QuizAppXamarin.Activities
                 }
                 else
                 {
-                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                    IncorrectAnswer();
                 }
             }
             // Checks option B for Correct Answer
@@ -113,7 +113,7 @@ namespace QuizAppXamarin.Activities
                 }
                 else
                 {
-                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                    IncorrectAnswer();
                 }
             }
             // Checks option C for Correct Answer
@@ -125,7 +125,7 @@ namespace QuizAppXamarin.Activities
                 }
                 else
                 {
-                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                    IncorrectAnswer();
                 }
             }
             // Checks option D for Correct Answer
@@ -137,7 +137,7 @@ namespace QuizAppXamarin.Activities
                 }
                 else
                 {
-                    Toast.MakeText(this, "Incorrect Answer", ToastLength.Short).Show();
+                    IncorrectAnswer();
                 }
             }
         }
@@ -198,6 +198,15 @@ namespace QuizAppXamarin.Activities
             correctFragment.Cancelable = false;
             correctFragment.Show(trans, "Correct");
             correctFragment.NextQuestion += CorrectFragment_NextQuestion;
+        }
+
+        void IncorrectAnswer()
+        {
+            IncorrectFragment incorrectFragment = new IncorrectFragment(quizQuestionList[quizPosition - 1].Answer);
+            var trans = SupportFragmentManager.BeginTransaction();
+            incorrectFragment.Cancelable = false;
+            incorrectFragment.Show(trans, "Incorrect");
+            incorrectFragment.NextQuestion += CorrectFragment_NextQuestion;
         }
 
         private void CorrectFragment_NextQuestion(object sender, EventArgs e)
