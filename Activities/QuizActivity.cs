@@ -212,6 +212,24 @@ namespace QuizAppXamarin.Activities
         private void CorrectFragment_NextQuestion(object sender, EventArgs e)
         {
             // Next Question
+            quizPosition++;
+
+            if (quizPosition > quizQuestionList.Count)
+            {
+                Toast.MakeText(this, "No more questions", ToastLength.Short).Show();
+                return;
+            }
+
+            int indx = quizPosition - 1;
+            ClearOptionsSelected();
+
+            questionTextView.Text = quizQuestionList[indx].QuizQuestion;
+            optionATextView.Text = quizQuestionList[indx].OptionA;
+            optionBTextView.Text = quizQuestionList[indx].OptionB;
+            optionCTextView.Text = quizQuestionList[indx].OptionC;
+            optionDTextView.Text = quizQuestionList[indx].OptionD;
+
+            quizPositionTextView.Text = "Question " + quizPosition.ToString() + "/" + quizQuestionList.Count.ToString();
         }
     }
 
