@@ -64,6 +64,7 @@
     <Compile Include="Activities\QuizDescriptionActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="DataModels\Question.cs" />
+    <Compile Include="Fragments\CompletedFragment.cs" />
     <Compile Include="Fragments\CorrectFragment.cs" />
     <Compile Include="Fragments\IncorrectFragment.cs" />
     <Compile Include="Helpers\QuizHelper.cs" />
@@ -174,6 +175,14 @@
     <AndroidResource Include="Resources\layout\wrong.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\completed.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
