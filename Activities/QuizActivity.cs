@@ -38,6 +38,10 @@ namespace QuizAppXamarin.Activities
         int quizPosition;
         double correctAnswerCount = 0;
 
+        int timerCounter = 0;
+        DateTime dateTime;
+        System.Timers.Timer countDown = new System.Timers.Timer();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -56,6 +60,32 @@ namespace QuizAppXamarin.Activities
 
             ConnectViews();
             BeginQuiz();
+
+            countDown.Interval = 1000;
+            countDown.Elapsed += CountDown_Elapsed;
+        }
+
+        private void CountDown_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            timerCounter++;
+
+            DateTime dt = new DateTime();
+            dt = dateTime.AddSeconds(-1);
+
+            var dateDifference = dateTime.Subtract(dt);
+            dateTime = dateTime - dateDifference;
+
+            RunOnUiThread(() =>
+            {
+                timeCounterTextView.Text = dateTime.ToString("mm:ss");
+            });
+
+            // End of Quiz on Timeout
+            if (timerCounter == 120)
+            {
+                countDown.Enabled = false;
+                CompleteQuiz();
+            }
         }
 
         void ConnectViews()
@@ -194,6 +224,12 @@ namespace QuizAppXamarin.Activities
             optionDTextView.Text = quizQuestionList[0].OptionD;
 
             quizPositionTextView.Text = "Question " + quizPosition.ToString() + "/" + quizQuestionList.Count();
+
+            dateTime = new DateTime();
+            dateTime = dateTime.AddMinutes(2);
+            timeCounterTextView.Text = dateTime.ToString("mm:ss");
+
+            countDown.Enabled = true;
         }
 
         void CorrectAnswer()
@@ -239,6 +275,8 @@ namespace QuizAppXamarin.Activities
 
         void CompleteQuiz()
         {
+            timeCounterTextView.Text = "00:00";
+            countDown.Enabled = false;
 
             string score = correctAnswerCount.ToString() + "/" + quizQuestionList.Count.ToString();
             double percentage = (correctAnswerCount / double.Parse(quizQuestionList.Count.ToString())) * 100;
